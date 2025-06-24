@@ -15,5 +15,16 @@ router.post("/", (req, res) => {
     res.status(201).json({ message: "Waste log added successfully", id: result.insertId });
   });
 });
+// ✅ Add This: Get All Waste Logs
+router.get("/", (req, res) => {
+  const sql = `
+    SELECT * FROM waste_logs
+   ORDER BY logged_at DESC
+  `;
 
+  db.query(sql, (err, results) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.status(200).json(results);
+  });
+});
 module.exports = router;

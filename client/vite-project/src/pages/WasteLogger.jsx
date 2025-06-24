@@ -60,6 +60,7 @@ const WasteLogger = () => {
     }
   };
 
+
   return (
     <div className="waste-logger-container">
       <h2>Log Waste</h2>

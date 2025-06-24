@@ -52,6 +52,10 @@ function Navbar() {
         <li><Link to="/events">Our Work</Link></li>
         <li><Link to="/volunteer">Get Involved</Link></li>
         <li><Link to="/donate">Donate</Link></li>
+        <Link to="/rewards">Rewards</Link>
+         {user?.role === 'volunteer' && (
+         <li><Link to="/rewards">Rewards</Link></li>
+        )}
         {user?.role === 'volunteer' && (
           <li><Link to="/waste-logger">Go to Waste Logger</Link></li>
         )}
